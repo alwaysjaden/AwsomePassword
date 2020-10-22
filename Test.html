@@ -12,12 +12,14 @@
     <script>
 
 
-//function
+////script 
 
 // Stings 
 
+var Empty =[]
 var passWordkey =[]
-var passWord=[]
+var password=[]
+var randomCount=[]
 
 
 //  Confriming Promts 
@@ -31,57 +33,62 @@ for ( var k=0 ; k<4; k++){
         alert("You need to select length of your password to be between 8 - 128 digits");
         var passWordLength= prompt("Please re-enter lenght of your password")
     } }
-var addLower= confirm( "Do you need Lower Case letter in Your Password?");
-var addUpper= confirm(" Do you need Upper Case Letter in your Password?");
-var addNumber= confirm(" Do you need Number in your Password?");
-var addSepcial= confirm(" Do you need Secial Character in your Password?");
-         if (addLower === true) {
-    passWordkey.push("a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
-    }
-         if (addUpper === true) {
-    passWordkey.push("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-    }
-        if (addNumber === true) {
-    passWordkey.push(1,2,3,4,5,6,7,8,9,0);
-    }
-        if (addSepcial === true) {
-    passWordkey.push("!","@","#","$","%","^","&","*","_","+","-","=","?","/");
-    }
-   
-
-//create random array
-for (var i = 0; i < passWordLength; i++){
-    var randomCount = Math.floor(Math.random() * passWordkey.length );
-
-  passWord.push (passWordkey[randomCount]);
-}
-
-//Random Password Result
-console.log(passWord.join(''));
-document.write("Your Password is " + passWord.join(''));
-
-
 
 
 // Choose elements to be mixed 
 
+var lower=["a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upper=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var number=["1","2","3","4","5","6","7","8","9","0"];
+var special=["!","@","#","$","%","^","&","*","_","+","-","=","?","/"];
 
-// mix Random intigers with Total Lenght 
-// Push array of True values to val random
+var addLower= confirm( "Do you need Lower Case letter in Your Password?");
+var addUpper= confirm(" Do you need Upper Case Letter in your Password?");
+var addNumber= confirm(" Do you need Number in your Password?");
+var addSepcial= confirm(" Do you need Secial Character in your Password?");
 
+//  Create Intiger Pool based on Confirmed Value  
 
-
-
-// pick random value from val random * passWorkLength
-
-// mix Random intigers with Condition 
-
-
-
-
-
+if (addLower === true) {
+    passWordkey.push(lower);
+    console.log (passWordkey);
+    }
+    
+if (addUpper === true) {
+    var passWordkey = passWordKey.concat(upper);
+    console.log (passWordkey);
+    }
+if (addNumber === true) {
+  var passWordkey = passWordKey.concat(number);
+    console.log (passWordkey);
+    }
+if (addSepcial === true) {
+  var passWordkey = passWordKey.concat(special);
+    console.log (passWordkey)
+    }
+   
+console.log
+//create random array
+for (var i = 0; i < passWordLength; i++) {
   
-  
+for (var j = 0; j < passWordkey[i]; j++){
+
+
+    var randomCount = Math.floor(Math.random() * passWordkey.length);
+
+  password.push (passWordkey[randomCount]);
+}
+}
+
+
+//Random Password Result
+console.log(password.join(''));
+document.write("Your Password is " + password.join(''));
+
+
+
+
+
 
 
 

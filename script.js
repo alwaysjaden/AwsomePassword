@@ -13,23 +13,12 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-
-
-///function
-
-// Stings 
+function generatePassword() {
 
 var passWordkey =[]
-var passWord=[]
-
-
-//  Confriming Promts 
-
+var password=[]
 var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
 
-
-// add If statment regarding Type of Characters 
 for ( var k=0 ; k<4; k++){
     if (passWordLength<8 || passWordLength>128) {
         alert("You need to select length of your password to be between 8 - 128 digits");
@@ -37,13 +26,10 @@ for ( var k=0 ; k<4; k++){
     } }
 
 
-// Choose elements to be mixed 
 var addLower= confirm( "Do you need Lower Case letter in Your Password?");
 var addUpper= confirm(" Do you need Upper Case Letter in your Password?");
 var addNumber= confirm(" Do you need Number in your Password?");
 var addSepcial= confirm(" Do you need Secial Character in your Password?");
-
-//  Create Intiger Pool based on Confirmed Value  
 
 if (addLower === true) {
     passWordkey.push("a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
@@ -58,19 +44,13 @@ if (addSepcial === true) {
     passWordkey.push("!","@","#","$","%","^","&","*","_","+","-","=","?","/");
     }
    
-
-//create random array
 for (var i = 0; i < passWordLength; i++){
     var randomCount = Math.floor(Math.random() * passWordkey.length );
 
-  passWord.push (passWordkey[randomCount]);
+  password.push (passWordkey[randomCount]);
 }
-
-//Random Password Result
-console.log(passWord.join(''));
-document.write("Your Password is " + passWord.join(''));
-
-
-
+password=password.join('')
+return(password)
+}
 
 
