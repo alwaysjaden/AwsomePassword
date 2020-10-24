@@ -1,19 +1,15 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-function generatePassword() {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  
+    <script>
 
 // Stings 
 
@@ -51,26 +47,28 @@ var addSepcial= confirm(" Do you need Secial Character in your Password?");
 
 if (addLower === true) {
     passWordkey.push(lower);
-    }
-    
-if (addUpper === true) {
+}
+if else (addUpper === true) {
     passWordkey.push(upper);
     }
-if (addNumber === true) {
+if else (addNumber === true) {
     passWordkey.push(number);
     }
-if (addSepcial === true) {
+if else (addSepcial === true) {
     passWordkey.push(special);
     }
 
-if (addLower === false && addUpper === false && addNumber ===false && addSpecial ===false){
+if (passWordKey && passWordKey.lengh=0){
     return
 }
-console.log(passWordkey)
 
 
-//create random arry with arry of arrays using 2 random variables
 
+// merge array of Arrays into One array 
+
+// var mergedKeys = passWordkey.flat(1);
+
+//create random array from Merged Password Keys
 
   
 for (var i = 0; i < passWordLength; i++){
@@ -80,12 +78,23 @@ for (var i = 0; i < passWordLength; i++){
     var randomCount2 = Math.floor(Math.random() * passWordkey[randomCount].length);
 
   password.push (passWordkey[randomCount][randomCount2]);
+
 }
 
 
-// Create New Array for password and join all arrays into one to eliminate " , " when display on document 
 
-password=password.join('');
-return(password);
-}
+//Random Password Result
+console.log(password.join(''));
+document.write("Your Password is " + password.join(''));
 
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
