@@ -59,27 +59,30 @@ if (addUpper === true) {
 if (addNumber === true) {
     passWordkey.push(number);
     }
-if (addSepcial === true) {
+if (addNumber === true) {
     passWordkey.push(special);
     }
-   
 
-// merge array of Arrays into One array 
 
-var mergedKeys = passWordkey.flat(1);
 
-//create random array from Merged Password Keys
+
+//create random arry with arry of arrays using 2 random variables
+
 
   
-for (var i = 0; i < mergedKeys.length; i++){
+for (var i = 0; i < passWordLength; i++){
 
-    var randomCount = Math.floor(Math.random() * mergedKeys.length);
+    var randomCount = Math.floor(Math.random() * passWordkey.length);
 
-  password.push (mergedKeys[randomCount]);
+    var randomCount2 = Math.floor(Math.random() * passWordkey[randomCount].length);
+
+  password.push (passWordkey[randomCount][randomCount2]);
 }
 
-password=password.join('')
-return(password)
-}
 
+// Create New Array for password and join all arrays into one to eliminate " , " when display on document 
+
+password=password.join('');
+return(password);
+}
 

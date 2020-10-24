@@ -11,9 +11,6 @@
   
     <script>
 
-
-////script 
-
 // Stings 
 
 var passWordkey =[]
@@ -26,7 +23,7 @@ var randomCount=[]
 var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
 
 
-// add If statment regarding Type of Characters 
+// add If statment regarding Type of Characters  with 4 Trys
 for ( var k=0 ; k<4; k++){
     if (passWordLength<8 || passWordLength>128) {
         alert("You need to select length of your password to be between 8 - 128 digits");
@@ -58,24 +55,26 @@ if (addUpper === true) {
 if (addNumber === true) {
     passWordkey.push(number);
     }
-if (addSepcial === true) {
+if (addNumber === true) {
     passWordkey.push(special);
     }
-   
 
-var mergedKeys = passWordkey.flat(1);
 
-console.log (mergedKeys);
+// merge array of Arrays into One array 
 
-//create random array
+// var mergedKeys = passWordkey.flat(1);
+
+//create random array from Merged Password Keys
 
   
-for (var i = 0; i < mergedKeys.length; i++){
+for (var i = 0; i < passWordLength; i++){
 
+    var randomCount = Math.floor(Math.random() * passWordkey.length);
 
-    var randomCount = Math.floor(Math.random() * mergedKeys.length);
+    var randomCount2 = Math.floor(Math.random() * passWordkey[randomCount].length);
 
-  password.push (mergedKeys[randomCount]);
+  password.push (passWordkey[randomCount][randomCount2]);
+
 }
 
 
