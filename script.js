@@ -63,16 +63,8 @@ if (addSepcial === true) {
     passWordkey.push(special);
     }
 
-if (addLower === false && addUpper === false && addNumber ===false && addSpecial ===false){
-    return
-}
-console.log(passWordkey)
-
-
 //create random arry with arry of arrays using 2 random variables
 
-
-  
 for (var i = 0; i < passWordLength; i++){
 
     var randomCount = Math.floor(Math.random() * passWordkey.length);
