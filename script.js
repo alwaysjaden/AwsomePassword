@@ -15,10 +15,19 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
 
+// Stings 
+
 var passWordkey =[]
 var password=[]
+var randomCount=[]
+
+
+//  Confriming Promts 
+
 var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
 
+
+// add If statment regarding Type of Characters  with 4 Trys
 for ( var k=0 ; k<4; k++){
     if (passWordLength<8 || passWordLength>128) {
         alert("You need to select length of your password to be between 8 - 128 digits");
@@ -26,29 +35,49 @@ for ( var k=0 ; k<4; k++){
     } }
 
 
+// Choose elements to be mixed 
+
+var lower=["a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upper=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var number=["1","2","3","4","5","6","7","8","9","0"];
+var special=["!","@","#","$","%","^","&","*","_","+","-","=","?","/"];
+
 var addLower= confirm( "Do you need Lower Case letter in Your Password?");
 var addUpper= confirm(" Do you need Upper Case Letter in your Password?");
 var addNumber= confirm(" Do you need Number in your Password?");
 var addSepcial= confirm(" Do you need Secial Character in your Password?");
 
+//  Create Intiger Pool based on Confirmed Value  
+
 if (addLower === true) {
-    passWordkey.push("a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+    passWordkey.push(lower);
     }
+    
 if (addUpper === true) {
-    passWordkey.push("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+    passWordkey.push(upper);
     }
 if (addNumber === true) {
-    passWordkey.push(1,2,3,4,5,6,7,8,9,0);
+    passWordkey.push(number);
     }
 if (addSepcial === true) {
-    passWordkey.push("!","@","#","$","%","^","&","*","_","+","-","=","?","/");
+    passWordkey.push(special);
     }
    
-for (var i = 0; i < passWordLength; i++){
-    var randomCount = Math.floor(Math.random() * passWordkey.length );
 
-  password.push (passWordkey[randomCount]);
+// merge array of Arrays into One array 
+
+var mergedKeys = passWordkey.flat(1);
+
+//create random array from Merged Password Keys
+
+  
+for (var i = 0; i < mergedKeys.length; i++){
+
+    var randomCount = Math.floor(Math.random() * mergedKeys.length);
+
+  password.push (mergedKeys[randomCount]);
 }
+
 password=password.join('')
 return(password)
 }

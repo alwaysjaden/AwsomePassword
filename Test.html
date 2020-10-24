@@ -16,7 +16,6 @@
 
 // Stings 
 
-var Empty =[]
 var passWordkey =[]
 var password=[]
 var randomCount=[]
@@ -51,34 +50,34 @@ var addSepcial= confirm(" Do you need Secial Character in your Password?");
 
 if (addLower === true) {
     passWordkey.push(lower);
-    console.log (passWordkey);
     }
     
 if (addUpper === true) {
-    var passWordkey = passWordKey.concat(upper);
-    console.log (passWordkey);
+    passWordkey.push(upper);
     }
 if (addNumber === true) {
-  var passWordkey = passWordKey.concat(number);
-    console.log (passWordkey);
+    passWordkey.push(number);
     }
 if (addSepcial === true) {
-  var passWordkey = passWordKey.concat(special);
-    console.log (passWordkey)
+    passWordkey.push(special);
     }
    
-console.log
+
+var mergedKeys = passWordkey.flat(1);
+
+console.log (mergedKeys);
+
 //create random array
-for (var i = 0; i < passWordLength; i++) {
+
   
-for (var j = 0; j < passWordkey[i]; j++){
+for (var i = 0; i < mergedKeys.length; i++){
 
 
-    var randomCount = Math.floor(Math.random() * passWordkey.length);
+    var randomCount = Math.floor(Math.random() * mergedKeys.length);
 
-  password.push (passWordkey[randomCount]);
+  password.push (mergedKeys[randomCount]);
 }
-}
+
 
 
 //Random Password Result
