@@ -22,12 +22,12 @@ var randomCount=[]
 var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
 
 // data Validation for Previos Prompt
-var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
+
 while (passWordLength<8 || passWordLength>128) {
-    
-        alert("You need to select length of your password to be between 8 - 128 digits");
-        
+    alert("You need to select length of your password to be between 8 - 128 digits");
+    var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );    
     } 
+
 // Choose elements to be mixed 
 var lower=["a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var upper=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -60,7 +60,7 @@ if (addSepcial === true) {
     // data Validation
     
 if (passWordkey.length === 0) {
-        alert( "Please Restart Awsome Password Generator, You need to choose at least one type of Characters to Generate Password");
+        alert( "You need to choose at least one criteria to Generate Password");
     }
 }
 
