@@ -21,10 +21,10 @@ var randomCount=[]
 
 var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
 
-
-// add If statment regarding Type of Characters  with 4 Trys
-    while (passWordLength<8 || passWordLength>128) {
-        var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
+// data Validation for Previos Prompt
+var passWordLength = prompt ( " How Long is your password choose between 8 - 128 Characters" );
+while (passWordLength<8 || passWordLength>128) {
+    
         alert("You need to select length of your password to be between 8 - 128 digits");
         
     } 
@@ -57,6 +57,8 @@ if (addSepcial === true) {
     passWordkey.push(special);
     }
 
+    // data Validation
+    
 if (passWordkey.length === 0) {
         alert( "Please Restart Awsome Password Generator, You need to choose at least one type of Characters to Generate Password");
     }
