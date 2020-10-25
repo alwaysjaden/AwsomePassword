@@ -56,25 +56,33 @@ if (password.length === 0) {
 }
 //create random arry with arry of arrays using 2 random variables
 
-for (var i = 0; i < passWordLength; i++){
-
-    var randomCount = Math.floor(Math.random() * passWordkey.length);
-    var randomCount2 = Math.floor(Math.random() * passWordkey[randomCount].length);
-
-  password.push (passWordkey[randomCount][randomCount2]);
-}
 
 // password Validation 
-
-// check if each arrays of array's in passWordkey is included in password
 for (var k = 0; k<passWordkey.length; k++){
-var check = passWordkey[k].some((el) => {
-    return password.indexOf(el) !== -1;
-});
+    var check = passWordkey[k].some((el) => {
+        return password.indexOf(el) !== -1;
+    });
 }
 
+// check if each arrays of array's in passWordkey is included in password
+
 // return and repeat password generation until check is true
-if (check=true){
+while(check===false) {
+    for (var i = 0; i < passWordLength; i++){
+
+        var randomCount = Math.floor(Math.random() * passWordkey.length);
+        var randomCount2 = Math.floor(Math.random() * passWordkey[randomCount].length);
+    
+      password.push (passWordkey[randomCount][randomCount2]);
+     
+    }
+    for (var k = 0; k<passWordkey.length; k++){
+        var check = passWordkey[k].some((el) => {
+            return password.indexOf(el) !== -1;
+        });
+        }
+
+if (check===true){
     password=password.join('');
     return(password); 
 }else {
@@ -84,11 +92,18 @@ if (check=true){
         var randomCount2 = Math.floor(Math.random() * passWordkey[randomCount].length);
     
       password.push (passWordkey[randomCount][randomCount2]);
+     
     }
+    for (var k = 0; k<passWordkey.length; k++){
+        var check = passWordkey[k].some((el) => {
+            return password.indexOf(el) !== -1;
+        });
+        }
+        console.log(check)
+        
 }
-
+}
+console.log(check)
 // Create New Array for password and join all arrays into one to eliminate " , " when display on document 
-password=password.join('');
-return(password);
 }
 
