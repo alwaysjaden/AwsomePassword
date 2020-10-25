@@ -1,11 +1,11 @@
 
-# Homework_2 - Personal Portfolio
+# Awsome Password Generator 
 
 ![PassWord Generator](./image/snapshot.gif?raw=true "Password Generator")
 
 # About This Project
 
-Using Bootstrap, develop your portfolio site with the following items:
+Using Javascript, develop your Password Generator that meets following criteria ;
 
    * click the button to generate a password
 
