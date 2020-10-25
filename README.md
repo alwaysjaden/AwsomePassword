@@ -1,7 +1,7 @@
 
 # Homework_2 - Personal Portfolio
 
-![PassWord Generator(./images/snapshot.gif?raw=true "Password Generator")
+![PassWord Generator](./image/snapshot.gif?raw=true "Password Generator")
 
 # About This Project
 
